@@ -1,0 +1,41 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "137242f6bb3c41e87888b8055e37081d",
+    "packages": [
+        {
+            "name": "marlon-be/icepay-api",
+            "version": "2.0",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:marlon-be/icepay-api.git",
+                "reference": "af5c96faed5a1a974f2fff667f84e48858e4b28f"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Icepay_": "src/"
+                }
+            },
+            "time": "2013-12-09 15:25:17"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": [
+
+    ],
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
+}

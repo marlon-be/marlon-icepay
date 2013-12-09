@@ -1,0 +1,16 @@
+{
+    "name": "marlon-be/marlon-icepay",
+    "autoload": {
+        "psr-0": { "Icepay": "lib/" }
+    },
+
+    "repositories": [
+        {
+            "type": "git",
+            "url": "git@github.com:marlon-be/icepay-api.git"
+        }
+    ],
+    "require": {
+        "marlon-be/icepay-api": "v2.0"
+    }
+}

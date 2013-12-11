@@ -110,7 +110,7 @@ class PaymentRequest
         return $this->parameters;
     }
 
-    protected function validate()
+    public function validate()
     {
         foreach ($this->requiredParameters as $field) {
             if (!isset($this->parameters[ $field ])) {

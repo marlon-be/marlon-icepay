@@ -11,6 +11,6 @@
         }
     ],
     "require": {
-        "marlon-be/icepay-api": "master@dev"
+        "marlon-be/icepay-api": "master"
     }
 }

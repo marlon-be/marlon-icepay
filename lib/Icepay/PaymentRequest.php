@@ -123,7 +123,7 @@ class PaymentRequest
     protected function validatePaymentMethodParameters()
     {
         if (!empty($this->parameters['paymentMethod'])) {
-            $methodClassName = 'Icepay_Paymentmethods_' . ucfirst($this->parameters['paymentMethod']);
+            $methodClassName = 'Icepay_Paymentmethod_' . ucfirst(strtolower($this->parameters['paymentMethod']));
             /** @var \Icepay_PaymentmethodInterface $paymentMethod */
             $paymentMethod = new $methodClassName();
             

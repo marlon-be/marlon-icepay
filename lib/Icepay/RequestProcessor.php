@@ -71,8 +71,8 @@ class RequestProcessor {
     {
         try {
             $basicmode = \Icepay_Basicmode::getInstance()
-                ->setMerchantID($this->merchantId)
-                ->setSecretCode($this->secretCode)
+                ->setMerchantID((string)$this->merchantId)
+                ->setSecretCode((string)$this->secretCode)
                 ->validatePayment($paymentObject);
 
             $this->url = $basicmode->getURL();
@@ -90,8 +90,8 @@ class RequestProcessor {
         try {
             /** @var \Icepay_Webservice_Pay $service */
             $service = \Icepay_Api_Webservice::getInstance()->paymentService();
-            $service->setMerchantID($this->merchantId)
-                ->setSecretCode($this->secretCode)
+            $service->setMerchantID((string)$this->merchantId)
+                ->setSecretCode((string)$this->secretCode)
                 ->setSuccessURL($this->successUrl)
                 ->setErrorURL($this->errorUrl);
             /** @var \Icepay_Webservice_TransactionObject $transactionObj */

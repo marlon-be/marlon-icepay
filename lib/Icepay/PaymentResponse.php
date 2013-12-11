@@ -48,8 +48,8 @@ class PaymentResponse {
     public function loadGet()
     {
         $result = new \Icepay_Result();
-        $result->setMerchantID($this->merchantId)
-                ->setSecretCode($this->secretCode);
+        $result->setMerchantID((string)$this->merchantId)
+                ->setSecretCode((string)$this->secretCode);
 
         try {
             if ($result->validate()) {
@@ -70,8 +70,8 @@ class PaymentResponse {
     public function loadPost($checkIp = false)
     {
         $result = new \Icepay_Postback();
-        $result->setMerchantID($this->merchantId)
-                ->setSecretCode($this->secretCode)
+        $result->setMerchantID((string)$this->merchantId)
+                ->setSecretCode((string)$this->secretCode)
                 ->doIPCheck($checkIp);
 
         try {

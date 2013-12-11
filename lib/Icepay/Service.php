@@ -45,8 +45,8 @@ class Service {
         /** @var \Icepay_Api_Webservice $api */
         $api = \Icepay_Api_Webservice::getInstance();
         $methods = $api->paymentMethodService()
-                        ->setMerchantID($this->merchantId)
-                        ->setSecretCode($this->secretCode)
+                        ->setMerchantID((string)$this->merchantId)
+                        ->setSecretCode((string)$this->secretCode)
                         ->retrieveAllPaymentmethods()->asArray();
 
         /** @var \Icepay_Webservice_Filtering $filtering */

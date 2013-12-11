@@ -137,7 +137,7 @@ class PaymentRequest
             }
 
             if ($amount = $this->parameters['amount']) {
-                $amountRange = $paymentMethod->getSupportedCurrency();
+                $amountRange = $paymentMethod->getSupportedAmountRange();
                 if($amount < $amountRange['minimum']) {
                     throw new InvalidArgumentException('The minimum amount for payment method "'.$this->parameters['paymentMethod'].'" is '.$amountRange['minimum']);
                 }

@@ -124,19 +124,19 @@ class PaymentRequest
             /** @var \Icepay_PaymentmethodInterface $paymentMethod */
             $paymentMethod = new $methodClassName();
             
-            if ($country = $this->parameters['country']) {
+            if (isset($this->parameters['country']) && $country = $this->parameters['country']) {
                 if (!$this->isSupportedBy($country, $paymentMethod->getSupportedCountries())) {
                     throw new UnsupportedException('The country "' . $country . '" is not supported by payment method "' . $this->parameters['paymentMethod'] . '"');
                 }
             }
 
-            if ($language = $this->parameters['language']) {
+            if (isset($this->parameters['language']) && $language = $this->parameters['language']) {
                 if (!$this->isSupportedBy($language, $paymentMethod->getSupportedLanguages())) {
                     throw new UnsupportedException('The language "' . $language . '" is not supported by payment method "' . $this->parameters['paymentMethod'] . '"');
                 }
             }
 
-            if ($amount = $this->parameters['amount']) {
+            if (isset($this->parameters['amount']) && $amount = $this->parameters['amount']) {
                 $amountRange = $paymentMethod->getSupportedAmountRange();
                 if($amount < $amountRange['minimum']) {
                     throw new InvalidArgumentException('The minimum amount for payment method "'.$this->parameters['paymentMethod'].'" is '.$amountRange['minimum']);
@@ -146,13 +146,13 @@ class PaymentRequest
                 }
             }
 
-            if ($currency = $this->parameters['currency']) {
+            if (isset($this->parameters['currency']) && $currency = $this->parameters['currency']) {
                 if (!$this->isSupportedBy($currency, $paymentMethod->getSupportedCurrency())) {
                     throw new UnsupportedException('The currency "' . $currency . '" is not supported by payment method "' . $this->parameters['paymentMethod'] . '"');
                 }
             }
 
-            if ($issuer = $this->parameters['issuer']) {
+            if (isset($this->parameters['issuer']) && $issuer = $this->parameters['issuer']) {
                 if (!$this->isSupportedBy($issuer, $paymentMethod->getSupportedIssuers())) {
                     throw new UnsupportedException('The issuer "' . $issuer . '" is not supported by payment method "' . $this->parameters['paymentMethod'] . '"');
                 }

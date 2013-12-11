@@ -43,7 +43,12 @@ class RequestProcessor {
     public function process(PaymentRequest $request)
     {
         $paymentObject = new \Icepay_PaymentObject();
-        $paymentObject->setData((object)$request->getArray());
+        foreach ($request->getArray() as $name => $value) {
+            call_user_func(
+                array($paymentObject, 'set' . ucfirst($name)),
+                array($value)
+            );
+        }
 
         if ($request->getPaymentMethod()) {
             $this->processWebservice($paymentObject);

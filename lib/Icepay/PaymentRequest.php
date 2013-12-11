@@ -8,9 +8,6 @@ use Icepay\Exception\UnsupportedException;
 
 class PaymentRequest
 {
-    /** @var \Icepay_Api_Webservice */
-    protected $api;
-
     /** @var array allowed PaymentMethods */
     protected $allowedMethods;
 
@@ -128,13 +125,13 @@ class PaymentRequest
             $paymentMethod = new $methodClassName();
             
             if ($country = $this->parameters['country']) {
-                if (!$this->api->exists($country, $paymentMethod->getSupportedCountries())) {
+                if (!$this->isSupportedBy($country, $paymentMethod->getSupportedCountries())) {
                     throw new UnsupportedException('The country "' . $country . '" is not supported by payment method "' . $this->parameters['paymentMethod'] . '"');
                 }
             }
 
             if ($language = $this->parameters['language']) {
-                if (!$this->api->exists($language, $paymentMethod->getSupportedLanguages())) {
+                if (!$this->isSupportedBy($language, $paymentMethod->getSupportedLanguages())) {
                     throw new UnsupportedException('The language "' . $language . '" is not supported by payment method "' . $this->parameters['paymentMethod'] . '"');
                 }
             }
@@ -150,16 +147,25 @@ class PaymentRequest
             }
 
             if ($currency = $this->parameters['currency']) {
-                if (!$this->api->exists($currency, $paymentMethod->getSupportedCurrency())) {
+                if (!$this->isSupportedBy($currency, $paymentMethod->getSupportedCurrency())) {
                     throw new UnsupportedException('The currency "' . $currency . '" is not supported by payment method "' . $this->parameters['paymentMethod'] . '"');
                 }
             }
 
             if ($issuer = $this->parameters['issuer']) {
-                if (!$this->api->exists($issuer, $paymentMethod->getSupportedIssuers())) {
+                if (!$this->isSupportedBy($issuer, $paymentMethod->getSupportedIssuers())) {
                     throw new UnsupportedException('The issuer "' . $issuer . '" is not supported by payment method "' . $this->parameters['paymentMethod'] . '"');
                 }
             }
         }
+    }
+
+    protected function isSupportedBy($needle, array $haystack = array())
+    {
+        $result = true;
+        if ($haystack && $haystack[0] != "00") {
+            $result = in_array($needle, $haystack);
+        }
+        return $result;
     }
 }

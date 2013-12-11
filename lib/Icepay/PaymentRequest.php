@@ -95,9 +95,11 @@ class PaymentRequest
 
     public function __call($method, $args)
     {
-        $field = lcfirst(substr($method, 3));
-        if(array_key_exists($field, $this->parameters)) {
-            return $this->parameters[$field];
+        if (substr($method, 3) == 'get') {
+            $field = lcfirst(substr($method, 3));
+            if(array_key_exists($field, $this->parameters)) {
+                return $this->parameters[$field];
+            }
         }
         throw new BadMethodCallException('Unkown method ' . $method);
     }

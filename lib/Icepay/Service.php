@@ -63,7 +63,7 @@ class Service {
             $filtering->filterByCurrency($currency);
         }
 
-        return $filtering->getPaymentmethods();
+        return $filtering->getFilteredPaymentmethods();
     }
 
     public function createPaymentRequest($amount = null, $country = null, $currency = null)

@@ -11,6 +11,6 @@
         }
     ],
     "require": {
-        "marlon-be/icepay-api": "v2.0.1"
+        "marlon-be/icepay-api": "2.0.*"
     }
 }

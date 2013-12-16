@@ -95,6 +95,11 @@ class PaymentResponse {
         return (string)$this->status == ResponseStatus::SUCCESS;
     }
 
+    public function isPending()
+    {
+        return (string)$this->status == ResponseStatus::OPEN;
+    }
+
     public function toArray()
     {
         return $this->parameters;

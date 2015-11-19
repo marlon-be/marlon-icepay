@@ -1,16 +1,67 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
-    "hash": "137242f6bb3c41e87888b8055e37081d",
+    "hash": "c7c688287deb78edfd447354a00b5d85",
+    "content-hash": "47b8c45090463f62b731d686d60bcc10",
     "packages": [
+        {
+            "name": "icepay/icepay",
+            "version": "2.5.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ICEPAYdev/icepay.git",
+                "reference": "0c517325a6fd55edf64fadfd50eacf044fb6055e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ICEPAYdev/icepay/zipball/0c517325a6fd55edf64fadfd50eacf044fb6055e",
+                "reference": "0c517325a6fd55edf64fadfd50eacf044fb6055e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.4"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "ICEPAY library to integrate ICEPAY in your projects.",
+            "homepage": "https://icepay.com/",
+            "keywords": [
+                "afterpay",
+                "api",
+                "bancontact",
+                "banktransfer",
+                "creditcard",
+                "gateway",
+                "icepay",
+                "ideal",
+                "mistercash",
+                "payment",
+                "payments",
+                "paypal",
+                "paysafecard",
+                "phone",
+                "refund",
+                "service",
+                "sofort",
+                "sofortbanking",
+                "yourgift"
+            ],
+            "time": "2015-09-17 08:32:44"
+        },
         {
             "name": "marlon-be/icepay-api",
             "version": "2.0",
             "source": {
                 "type": "git",
-                "url": "git@github.com:marlon-be/icepay-api.git",
+                "url": "https://github.com/marlon-be/icepay-api.git",
                 "reference": "af5c96faed5a1a974f2fff667f84e48858e4b28f"
             },
             "type": "library",
@@ -22,20 +73,12 @@
             "time": "2013-12-09 15:25:17"
         }
     ],
-    "packages-dev": [
-
-    ],
-    "aliases": [
-
-    ],
+    "packages-dev": [],
+    "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [
-
-    ],
-    "platform": [
-
-    ],
-    "platform-dev": [
-
-    ]
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
 }

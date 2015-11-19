@@ -121,7 +121,7 @@ class PaymentRequest
     {
         if (!empty($this->parameters['paymentMethod'])) {
             $methodClassName = 'Icepay_Paymentmethod_' . ucfirst(strtolower($this->parameters['paymentMethod']));
-            /** @var \Icepay_PaymentmethodInterface $paymentMethod */
+            /** @var \Icepay_Paymentmethod $paymentMethod */
             $paymentMethod = new $methodClassName();
             
             if (isset($this->parameters['country']) && $country = $this->parameters['country']) {

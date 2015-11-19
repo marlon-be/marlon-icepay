@@ -67,12 +67,11 @@ class PaymentResponse {
         }
     }
 
-    public function loadPost($checkIp = false)
+    public function loadPost()
     {
         $result = new \Icepay_Postback();
         $result->setMerchantID((string)$this->merchantId)
-                ->setSecretCode((string)$this->secretCode)
-                ->doIPCheck($checkIp);
+                ->setSecretCode((string)$this->secretCode);
 
         try {
             if ($result->validate()) {

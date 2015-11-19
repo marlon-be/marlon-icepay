@@ -4,13 +4,7 @@
         "psr-0": { "Icepay": "lib/" }
     },
 
-    "repositories": [
-        {
-            "type": "git",
-            "url": "git@github.com:marlon-be/icepay-api.git"
-        }
-    ],
     "require": {
-        "marlon-be/icepay-api": "2.0.*"
+        "icepay/icepay": "~2.5.3"
     }
 }

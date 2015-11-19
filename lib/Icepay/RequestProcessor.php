@@ -72,7 +72,7 @@ class RequestProcessor {
         return $this->providerTransactionId;
     }
 
-    protected function processBasic(\Icepay_PaymentObjectInterface $paymentObject)
+    protected function processBasic(\Icepay_PaymentObject_Interface_Abstract $paymentObject)
     {
         try {
             $basicmode = \Icepay_Basicmode::getInstance()
@@ -90,7 +90,7 @@ class RequestProcessor {
         }
     }
 
-    protected function processWebservice(\Icepay_PaymentObjectInterface $paymentObject)
+    protected function processWebservice(\Icepay_PaymentObject_Interface_Abstract $paymentObject)
     {
         try {
             /** @var \Icepay_Webservice_Pay $service */
@@ -99,7 +99,7 @@ class RequestProcessor {
                 ->setSecretCode((string)$this->secretCode)
                 ->setSuccessURL($this->successUrl)
                 ->setErrorURL($this->errorUrl);
-            /** @var \Icepay_Webservice_TransactionObject $transactionObj */
+            /** @var \Icepay_TransactionObject $transactionObj */
             $transactionObj = $service->checkOut($paymentObject);
 
             $this->url = $transactionObj->getPaymentScreenURL();
